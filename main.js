@@ -27,33 +27,10 @@ function gacha(){
     }
 }
 
-function one(){
+function turn(count){
     result.innerHTML = "";
     sum = 0;
-    count = 1;
-    amo = gacha();
-    result.innerHTML += `<img src="money_${amo}.png"><br>`;
-    sum += amo;
-    amountsum.innerHTML = "合計" + sum + "円";
-}
-
-function ten(){
-    result.innerHTML = "";
-    sum = 0;
-    count = 10;
-    for(let i = 0; i < 10; i++){
-        amo = gacha();
-        result.innerHTML += `<img src="money_${amo}.png"><br>`;
-        sum += amo;
-    }
-    amountsum.innerHTML = "合計" + sum + "円";
-}
-
-function han(){
-    result.innerHTML = "";
-    sum = 0;
-    count = 100;
-    for(let i = 0; i < 100; i++){
+    for(let i = 0; i < count; i++){
         amo = gacha();
         result.innerHTML += `<img src="money_${amo}.png"><br>`;
         sum += amo;
@@ -69,7 +46,7 @@ function tweet(){
     window.open(`https://twitter.com/intent/tweet?text=${text}`,)
 }
 
-doButton1.onclick = one;
-doButton10.onclick = ten;
-doButton100.onclick = han;
+doButton1.onclick = () => turn(1);
+doButton10.onclick = () => turn(10);
+doButton100.onclick = () => turn(100);
 dotweet.onclick = tweet;
