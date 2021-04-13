@@ -1,14 +1,7 @@
 body{
     text-align: center;
-    font-size: 40px;
 }
 
 table{
     margin: auto;
-}
-
-#one, #ten, #han {
-    width:100px;
-    height:50px;
-    font-size: 20px;
 }
