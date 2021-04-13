@@ -42,10 +42,10 @@ function turn(num){
 
 function tweet(){
     let text = "";
-    text += `${count}%E5%9B%9E%E3%82%AC%E3%83%81%E3%83%A3%E3%82%92%E5%BC%95%E3%81%8D%E5%90%88%E8%A8%88%E9%87%91%E9%A1%8D${sum}%E5%86%86%0D%0A`
-    text += `%23%E3%81%8A%E6%9C%AD%E3%82%AC%E3%83%81%E3%83%A3%0D%0A`
-    text += `https%3A%2F%2Fkyu099.github.io%2Fbillgacha%2F%0D%0A`
-    window.open(`https://twitter.com/intent/tweet?text=${text}`,)
+    text += encodeURI(`${count}回ガチャを引き合計金額${sum}円`) + "%0D%0A";
+    text += "%23" + encodeURI("お札ガチャ") + "%0D%0A";
+    text += encodeURI("https://kyu099.github.io/billgacha/") + "%0D%0A";
+    window.open(`https://twitter.com/intent/tweet?text=${text}`,);
 }
 
 doButton1.onclick = () => turn(1);
