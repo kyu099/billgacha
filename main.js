@@ -2,12 +2,16 @@ const doButton1 = document.getElementById("one");
 const doButton10 = document.getElementById("ten");
 const doButton100 = document.getElementById("han");
 const result = document.getElementById("result");
+const amountsum = document.getElementById("amount");
 
 const bill = [
     {ratio:0.94, amount:1000},
     {ratio:0.98, amount:5000},
     {ratio:1, amount:10000}
 ];
+
+let sum = 0;
+let amo = 0;
 
 function gacha(){
     let i = Math.random();
@@ -23,21 +27,33 @@ function gacha(){
 
 function one(){
     result.innerHTML = "";
-    result.innerHTML += `<img src="money_${gacha()}.png"><br>`;
+    sum = 0;
+    amo = gacha();
+    result.innerHTML += `<img src="money_${amo}.png"><br>`;
+    sum += amo;
+    amountsum.innerHTML = "合計" + sum + "円";
 }
 
 function ten(){
     result.innerHTML = "";
+    sum = 0;
     for(let i = 0; i < 10; i++){
-        result.innerHTML += `<img src="money_${gacha()}.png"><br>`;
+        amo = gacha();
+        result.innerHTML += `<img src="money_${amo}.png"><br>`;
+        sum += amo;
     }
+    amountsum.innerHTML = "合計" + sum + "円";
 }
 
 function han(){
     result.innerHTML = "";
+    sum = 0;
     for(let i = 0; i < 100; i++){
-        result.innerHTML += `<img src="money_${gacha()}.png"><br>`;
+        amo = gacha();
+        result.innerHTML += `<img src="money_${amo}.png"><br>`;
+        sum += amo;
     }
+    amountsum.innerHTML = "合計" + sum + "円";
 }
 
 doButton1.onclick = one;
