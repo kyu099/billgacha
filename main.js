@@ -27,14 +27,16 @@ function gacha(){
     }
 }
 
-function turn(count){
+function turn(num){
     result.innerHTML = "";
     sum = 0;
+    count = num;
     for(let i = 0; i < count; i++){
         amo = gacha();
         result.innerHTML += `<img src="money_${amo}.png"><br>`;
         sum += amo;
     }
+    
     amountsum.innerHTML = "合計" + sum + "円";
 }
 
